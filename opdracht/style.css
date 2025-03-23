@@ -1,0 +1,59 @@
+#box{
+    background-image: url("img/figure.png");
+    width: 800px;
+    height: 800px;
+    display: block;
+    position: relative;
+    margin-left: 30em;
+  
+
+}
+
+#box img {
+    position: absolute;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-color: rgb(143, 212, 213);
+    color: aliceblue;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+footer{
+    background-color: rgb(143, 212, 213);
+    color: rgb(240, 248, 255);
+    height: 5em;
+    display: flex;
+    justify-content: center;
+
+}
+
+#buttons{
+    padding: 1em;
+    margin-top: 0.25em;
+    gap: 0.5em;
+    
+}
+
+button:hover {
+  color: navy
+}
+
+#topButton,
+#bottomButton,
+#dressButton,
+#doneButton {
+    background-color: rgb(212, 254, 255);
+    border: navy;
+    border-radius: 2em;
+    border-color: rgb(240, 248, 255);
+    height: 3em;
+    width: 7em;
+}
+
