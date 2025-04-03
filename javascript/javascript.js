@@ -17,12 +17,20 @@ const dress = ["#", "dress1","dress2"];
 const audio = document.getElementById("sound");
 const doneButton = document.getElementById("doneButton");
 
+//  Timer
+const timer = document.getElementById("timer");
+const timeButton = document.getElementById('timeButton')
+const timerSound = document.getElementById('timerSound')
 
 
-// Index
+// Index (variabele)
 let topIndex = 0;
 let bottomIndex = 0;
 let dressIndex = 0;
+let timeLeft = 30; // Aantal seconden waar de timer begint
+let timerId; // Variabele om de interval-ID op te slaan, zodat we het later kunnen stoppen
+
+
 
 // Function tops
 function changeTop() {
@@ -54,11 +62,38 @@ function changeDress() {
     dressImage.src = "img/" + dress[dressIndex] + ".png";
 }
 
-// Function audio 
+// Function audio (https://chatgpt.com/c/67e42403-9038-8013-aa5e-9460f710b26e)(Prompt:hoe zet ik mijn audio op pauze?) 
+// Audio credits: https://www.youtube.com/watch?v=fpneQ8ec7tg&ab_channel=L0ki_Lux
 function playAudio() {
-    audio.play();
-} 
-// https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play 
+    if (audio.paused) {
+        audio.play();
+        doneButton.textContent = "Music Pause"; 
+    } else {
+        audio.pause();
+        doneButton.textContent = "Music Play"; 
+    }
+}
+
+function startTimer() {
+    timeButton.disabled = true; 
+    timerId = setInterval(() => {
+        timeLeft--;
+        timer.textContent = timeLeft;
+        if (timeLeft <= 0) {
+            clearInterval(timerId);
+            timerSound.play() 
+            timer.textContent = "It's Timeee!";
+            timeButton.disabled = false; 
+        }
+    }, 1000);
+}
+
+
+
+
+
+
+
 
 
 
@@ -67,4 +102,5 @@ topButton.addEventListener("click", changeTop);
 bottomButton.addEventListener("click", changeBottom);
 dressButton.addEventListener("click", changeDress);
 doneButton.addEventListener("click", playAudio);
+timeButton.addEventListener("click", startTimer);
 

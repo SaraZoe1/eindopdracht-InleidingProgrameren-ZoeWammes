@@ -12,8 +12,14 @@
 #box img {
     position: absolute;
 }
+
+/* https://www.winxclub.com/en/article/bedroom-special */
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url("/img/bloomroom_wallpaperzoom.jpg");  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 header{
     background-color: rgb(143, 212, 213);
@@ -23,6 +29,49 @@ header{
     justify-content: center;
     width: 100%;
     
+}
+#musicBox {
+    width: 10em; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    position: absolute; 
+    left: 0em; 
+    top: 2em;
+    border-radius: 1em;
+    margin-top: 5em ;
+    background-color: white;
+    margin-left: 1em;
+    
+}
+
+#timerBox {
+    width: 10em; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    position: absolute; 
+    left: 1em;
+    top: 20em; 
+    border-radius: 1em;
+    background-color: white;
+}
+
+#doneButton, #timeButton {
+    background-color: rgb(255, 212, 249);
+    border: navy;
+    border-radius: 1em;
+    border-color: rgb(240, 248, 255);
+    height: 3em;
+    width: 4em;
+    margin-bottom: 1em;
+
+}
+
+
+#musicBox img {
+    width: 100%;
+    height: auto; 
 }
 
 footer{
@@ -47,8 +96,7 @@ button:hover {
 
 #topButton,
 #bottomButton,
-#dressButton,
-#doneButton {
+#dressButton{
     background-color: rgb(212, 254, 255);
     border: navy;
     border-radius: 2em;
